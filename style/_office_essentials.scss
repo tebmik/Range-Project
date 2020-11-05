@@ -1,0 +1,51 @@
+@import './mixins';
+@import './variables';
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .product_container,
+    .sort_wrapper {
+        @include grid(repeat(auto-fill, minmax(250px, 1fr)), 15px);
+        .button {
+            background-color: $backgroundTransparent;
+            border: none;
+            border: 1px solid $borderColorLight;
+            padding: 10px;
+            margin-bottom: 10px;
+            font-weight: 400;
+            font-size: 22px;
+        }
+    }
+
+    .back-to-top-wrapper {
+        max-width: 1200px;
+        margin: 0 auto 15px auto;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        /* height: 60px; */
+        display: hidden;
+
+        .back-to-top {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            color: #fff;
+            background-color: $danger;
+            position: relative;
+            @include flex(center, center);
+            margin-right: 15px;
+            cursor: pointer;
+
+            .arrow {
+                height: 100%;
+                @include flex(center, center);
+                font-size: 50px;
+                margin-top: 15px;
+            }
+        }
+    }
+}
